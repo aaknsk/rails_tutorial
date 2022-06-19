@@ -12,5 +12,8 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     # for contact page
     get contact_path
     assert_select 'title', full_title('Contact')
+    # for sign up page
+    get signup_path
+    assert_select 'title', full_title('Sign up')
   end
 end
