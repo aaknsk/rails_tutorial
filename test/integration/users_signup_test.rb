@@ -23,5 +23,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     # User作成成功後にshow画面にリダイレクトしてtemplateが正しいかみている
     follow_redirect!
     assert_template 'users/show'
+    assert is_logged_in?
   end
 end
