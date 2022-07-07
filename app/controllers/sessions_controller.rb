@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # ログイン後のページにリダイレク
       log_in(user)
+      remember(user)
       # 自動的に user_url(user) -> users/:id に変換している
       redirect_to user
     else
