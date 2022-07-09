@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# 認証のためのセッションを扱うメソッド集
 module SessionsHelper
   # 渡されたuserでログインする
   def log_in(user)
@@ -32,7 +35,6 @@ module SessionsHelper
   end
 
   # 永続的セッションを破壊する
-
   def forget(user)
     user.forget
     cookies.delete(:user_id)
